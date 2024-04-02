@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { ContactsAPI } from '../../data/contacts-api.js';
+import { ContactsAPI } from '../../data/contacts-api';
 
 export default function Contact() {
   const { id } = useParams();
