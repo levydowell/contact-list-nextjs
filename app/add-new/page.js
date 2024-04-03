@@ -12,8 +12,10 @@ export default function AddContact() {
   const [phone, setPhone] = useState(null);
   const router = useRouter();
 
+  const generateId = () => Math.round(Math.random() * 100000000); 
+
   const handleAddContact = () => {
-    setID(generateId())
+    console.log('id', id);
     ContactsAPI.addContact({
       id,
       name,
@@ -22,9 +24,9 @@ export default function AddContact() {
       phone,
     });
     router.push('../');
+    
   };
 
-  const generateId = () => Math.round(Math.random() * 100000000); 
 
   return (
     <div>
@@ -35,9 +37,10 @@ export default function AddContact() {
         <input 
           type="text"
           className="form-control"
-          onChange={(e) =>
-            setName(parseInt(e.target.value, 10))
-          }
+          onChange={(e) => {
+            setName(e.target.value);
+            setID(generateId())
+          }}
         />
 
         <label>email</label>
@@ -67,7 +70,7 @@ export default function AddContact() {
           }
         />
 
-        <button type="button" onClick={handleAddContact}>Submit</button>
+        <button type="button" onClick={handleAddContact}>Add New Contact</button>
       </form>
 
       <Link href='../page'>All Contacts</Link>

@@ -9,6 +9,9 @@ import './globals.css';
 export default function Home() {
   const [allContacts, _] = useState(ContactsAPI.all());
   console.log(allContacts);
+  if (allContacts === null) {
+    return
+  }
   return (
   <main>
     <div className='container'>
@@ -16,15 +19,15 @@ export default function Home() {
       <button>
         <Link href="./add-new">Add Contact</Link>
       </button>
+
       {allContacts.map((c) => (
         <div className='row justify-content-start border' key={c.id}>
           <div className='col-3'>
             <img className='contactImg' src={c.imgURL} alt='Profile Picture'>
-
             </img>
           </div>
           <div className='col-3 border'>
-            {c.name}
+            <Link href={`/contact-info/${c.id}`}>{c.name}</Link>
           </div>
           <div className='col-3 border'>
             {c.email}
@@ -33,6 +36,7 @@ export default function Home() {
             {c.phone}
           </div>
         </div>
+        
       ))}
       
     </div>

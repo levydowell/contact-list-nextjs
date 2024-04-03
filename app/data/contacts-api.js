@@ -3,19 +3,19 @@
 export const ContactsAPI = {
   contacts: [
     {
-      id: 1,
-      name: "Levy Dowell",
-      email: "levydowell@yahoo.com",
-      imgURL: "https://picsum.photos/200",
-      phone: "123456789",
+      // id: 1,
+      // name: "Levy Dowell",
+      // email: "levydowell@yahoo.com",
+      // imgURL: "https://picsum.photos/200",
+      // phone: "123456789",
     },
-    {
-      id: 2,
-      name: "Jane Smith",
-      email: "jane@yahoo.com",
-      imgURL: "https://picsum.photos/200",
-      phone: "123456789",
-    },
+    // {
+    //   id: 2,
+    //   name: "Jane Smith",
+    //   email: "jane@yahoo.com",
+    //   imgURL: "https://picsum.photos/200",
+    //   phone: "123456789",
+    // },
   ],
   all: function () {
     return this.contacts;
@@ -24,7 +24,7 @@ export const ContactsAPI = {
     this.contacts.push({ id, name, email, imgURL, phone });
   },
   get: function (id) {
-    const isContact = (c) => c.name === id;
+    const isContact = (c) => c.id === id;
     return this.contacts.find(isContact);
   },
 };
