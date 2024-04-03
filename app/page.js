@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { ContactsAPI } from './data/contacts-api.js';
 import Link from 'next/link';
-import Image from 'next/image'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
 
@@ -14,22 +13,24 @@ export default function Home() {
   <main>
     <div className='container'>
       <h1>Contacts</h1>
-      
+      <button>
+        <Link href="./add-new">Add Contact</Link>
+      </button>
       {allContacts.map((c) => (
-        <div className='row justify-content-start' key={c.id}>
+        <div className='row justify-content-start border' key={c.id}>
           <div className='col-3'>
-            <img className='fit-picture' src={c.imgURL} alt='Profile Picture'>
+            <img className='contactImg' src={c.imgURL} alt='Profile Picture'>
 
             </img>
           </div>
-          <div className='col-3'>
+          <div className='col-3 border'>
             {c.name}
           </div>
-          <div className='col-3'>
-            {c.name}
+          <div className='col-3 border'>
+            {c.email}
           </div>
-          <div className='col-3'>
-            {c.name}
+          <div className='col-3 border'>
+            {c.phone}
           </div>
         </div>
       ))}

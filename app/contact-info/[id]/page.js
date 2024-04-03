@@ -7,7 +7,7 @@ export default function Contact() {
   const { id } = useParams();
   const contact = ContactsAPI.get(parseInt(id, 10));
 
-  if (!player) {
+  if (!contact) {
 		return <div>Sorry, but the player was not found</div>;
 	}
 
