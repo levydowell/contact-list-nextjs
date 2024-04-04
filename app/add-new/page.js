@@ -73,7 +73,7 @@ export default function AddContact() {
         <button type="button" onClick={handleAddContact}>Add New Contact</button>
       </form>
 
-      <Link href='../page'>All Contacts</Link>
+      <Link href='../'>All Contacts</Link>
     </div>
   )
 }

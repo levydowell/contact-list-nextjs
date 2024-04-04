@@ -1,14 +1,14 @@
 "use client";
 
 export const ContactsAPI = {
-  contacts: [
-    {
-      // id: 1,
-      // name: "Levy Dowell",
-      // email: "levydowell@yahoo.com",
-      // imgURL: "https://picsum.photos/200",
-      // phone: "123456789",
-    },
+  contacts: [],
+    // {
+    //   id: 1,
+    //   name: "Levy Dowell",
+    //   email: "levydowell@yahoo.com",
+    //   imgURL: "https://picsum.photos/200",
+    //   phone: "123456789",
+    // },
     // {
     //   id: 2,
     //   name: "Jane Smith",
@@ -16,7 +16,7 @@ export const ContactsAPI = {
     //   imgURL: "https://picsum.photos/200",
     //   phone: "123456789",
     // },
-  ],
+  
   all: function () {
     return this.contacts;
   },
