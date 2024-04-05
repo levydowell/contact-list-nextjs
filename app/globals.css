@@ -10,3 +10,12 @@
 .contacts {
   background-color: antiquewhite;
 }
+
+.addNewContainer {
+  width: 50%;
+  margin: auto;
+}
+
+.contactInfoHeader {
+  margin-bottom: 1rem;
+}

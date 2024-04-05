@@ -1,7 +1,10 @@
 import Link from "next/link";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import PropTypes from 'prop-types';
 
-export const PrintContacts = ({ allContacts }) => {
+
+
+const PrintContacts = ({ allContacts }) => {
   return (
     <div>
       <div className='row justify-content-center border'>
@@ -31,4 +34,18 @@ export const PrintContacts = ({ allContacts }) => {
         )}
     </div>
   )
-}
+};
+
+PrintContacts.propTypes = {
+  allContacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      imgURL: PropTypes.string,
+      name: PropTypes.string,
+      email: PropTypes.string,
+      phone: PropTypes.number,
+    })
+  )
+};
+
+export default PrintContacts;

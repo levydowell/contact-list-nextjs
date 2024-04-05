@@ -27,4 +27,9 @@ export const ContactsAPI = {
     const isContact = (c) => c.id === id;
     return this.contacts.find(isContact);
   },
+  delete: function (c) {
+    const elementIndeces = this.contacts.indexOf(c);
+    this.contacts.splice(elementIndeces, 1);
+    console.log('deleted', this.contacts)
+  }
 };

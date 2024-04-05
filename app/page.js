@@ -1,9 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { ContactsAPI } from './data/contacts-api.js';
-import Link from 'next/link';
 import { PrintHeader } from './components/printHeader.js';
-import { PrintContacts } from './components/printContacts.js';
+import PrintContacts from './components/printContacts.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
 

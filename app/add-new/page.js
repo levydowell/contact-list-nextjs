@@ -29,14 +29,15 @@ export default function AddContact() {
 
 
   return (
-    <div>
+    <div className='text-center'>
       
-      <form>
+      <form className="addNewContainer">
         
         <label>Name</label>
         <input 
           type="text"
           className="form-control"
+          placeholder="Enter name"
           onChange={(e) => {
             setName(e.target.value);
             setID(generateId())
@@ -47,6 +48,7 @@ export default function AddContact() {
         <input 
           type="text"
           className="form-control"
+          placeholder="Enter email"
           onChange={(e) =>
             setEmail(e.target.value)
           }
@@ -56,6 +58,7 @@ export default function AddContact() {
         <input 
           type="text"
           className="form-control"
+          placeholder="Enter URL for image"
           onChange={(e) =>
             setImgURL(e.target.value)
           }
@@ -65,12 +68,13 @@ export default function AddContact() {
         <input 
           type="text"
           className="form-control"
+          placeholder="Enter phone number"
           onChange={(e) =>
             setPhone(e.target.value)
           }
         />
 
-        <button type="button" onClick={handleAddContact}>Add New Contact</button>
+        <button type="button" className="btn btn-primary" onClick={handleAddContact}>Add New Contact</button>
       </form>
 
       <Link href='../'>All Contacts</Link>
