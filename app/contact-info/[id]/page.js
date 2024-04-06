@@ -4,6 +4,11 @@ import { useParams } from 'next/navigation';
 import { ContactsAPI } from '../../data/contacts-api';
 import { useRouter } from 'next/navigation';
 
+/**
+ * Destructure 'id' from useParams object.
+ * Use 'id' in the get method of ContactsAPI get method. 
+ * @returns data to be rendered for the single selected contact.
+ */
 export default function Contact() {
   const { id }  = useParams();
   const contact = ContactsAPI.get(parseInt(id, 10));
@@ -12,7 +17,8 @@ export default function Contact() {
   if (!contact) {
 		return <div>Sorry, we could not find that contact</div>;
 	}
-
+  
+  // Function to handle the deletion of a contact
   const handleDelete = () => {
     ContactsAPI.delete(contact);
     router.push('../')

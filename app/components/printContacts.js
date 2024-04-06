@@ -3,7 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from 'prop-types';
 
 
-
+/**
+ * Takes list of allContacts and displays each contact to the screen.
+ * @param {*} allContacts A list of every contact object 
+ * @returns react component to display all data
+ */
 const PrintContacts = ({ allContacts }) => {
   return (
     <div>
@@ -39,13 +43,13 @@ const PrintContacts = ({ allContacts }) => {
 PrintContacts.propTypes = {
   allContacts: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number,
+      id: PropTypes.number.isRequired,
       imgURL: PropTypes.string,
-      name: PropTypes.string,
+      name: PropTypes.string.isRequired,
       email: PropTypes.string,
-      phone: PropTypes.number,
+      phone: PropTypes.string,
     })
-  )
+  ).isRequired,
 };
 
 export default PrintContacts;

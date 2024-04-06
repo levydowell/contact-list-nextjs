@@ -8,8 +8,8 @@ import './globals.css';
 
 
 export default function Home() {
+  // uses .all method of Contacts API to retrieve list of all contacts.
   const [allContacts, _] = useState(ContactsAPI.all());
-  console.log(allContacts);
   if (allContacts.length === 0) {
     return (
       <PrintHeader />

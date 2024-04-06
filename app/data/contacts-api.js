@@ -1,5 +1,6 @@
 "use client";
 
+//API to store data, along with methods to access/modify.
 export const ContactsAPI = {
   contacts: [],
     // {
@@ -30,6 +31,5 @@ export const ContactsAPI = {
   delete: function (c) {
     const elementIndeces = this.contacts.indexOf(c);
     this.contacts.splice(elementIndeces, 1);
-    console.log('deleted', this.contacts)
   }
 };

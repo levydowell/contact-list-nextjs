@@ -4,6 +4,11 @@ import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
+/**
+ * Utilize useState hook to create setter function for all contact object parameters.
+ * Define `handleAddContact` function to handle button click event.
+ * @returns contact data pushed to ContactsAPI.
+ */
 export default function AddContact() {
   const [id, setID] = useState(null);
   const [name, setName] = useState(null);
@@ -11,11 +16,11 @@ export default function AddContact() {
   const [imgURL, setImgURL] = useState(null);
   const [phone, setPhone] = useState(null);
   const router = useRouter();
-
+  
+  //generate random id to be assigned to each contact.
   const generateId = () => Math.round(Math.random() * 100000000); 
 
   const handleAddContact = () => {
-    console.log('id', id);
     ContactsAPI.addContact({
       id,
       name,
